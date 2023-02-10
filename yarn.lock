@@ -7536,60 +7536,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "my-app@workspace:."
-  dependencies:
-    "@angular-devkit/build-angular": ^15.1.5
-    "@angular-eslint/builder": 15.2.0
-    "@angular-eslint/eslint-plugin": 15.2.0
-    "@angular-eslint/eslint-plugin-template": 15.2.0
-    "@angular-eslint/schematics": 15.1.0
-    "@angular-eslint/template-parser": 15.2.0
-    "@angular/animations": ^15.1.4
-    "@angular/cli": ~15.1.5
-    "@angular/common": ^15.1.4
-    "@angular/compiler": ^15.1.4
-    "@angular/compiler-cli": ^15.1.4
-    "@angular/core": ^15.1.4
-    "@angular/forms": ^15.1.4
-    "@angular/localize": ^15.1.4
-    "@angular/platform-browser": ^15.1.4
-    "@angular/platform-browser-dynamic": ^15.1.4
-    "@angular/router": ^15.1.4
-    "@ng-bootstrap/ng-bootstrap": 14.0.1
-    "@ngx-translate/core": ^14.0.0
-    "@ngx-translate/http-loader": ^7.0.0
-    "@popperjs/core": ^2.11.6
-    "@souyahia/prettier-config": ^1.0.0
-    "@souyahia/typescript-config": ^1.1.2
-    "@types/jasmine": ~4.0.0
-    "@typescript-eslint/eslint-plugin": 5.29.0
-    "@typescript-eslint/parser": 5.51.0
-    bootstrap: ^5.2.3
-    bootstrap-icons: ^1.10.3
-    eslint: ^8.18.0
-    eslint-config-airbnb-base: ^15.0.0
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-formatter-pretty: ^4.1.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-prettier: ^4.2.1
-    jasmine-core: ~4.3.0
-    karma: ~6.4.0
-    karma-chrome-launcher: ~3.1.0
-    karma-coverage: ~2.2.0
-    karma-jasmine: ~5.1.0
-    karma-jasmine-html-reporter: ~2.0.0
-    ngx-webstorage: ^11.1.1
-    prettier: ^2.7.1
-    rxjs: ~7.8.0
-    tslib: ^2.3.0
-    typescript: ~4.8.4
-    zone.js: ~0.11.4
-  languageName: unknown
-  linkType: soft
-
 "nanoid@npm:^3.3.4":
   version: 3.3.4
   resolution: "nanoid@npm:3.3.4"
@@ -8259,6 +8205,60 @@ __metadata:
   checksum: 5b1e2daa247062061325b8fdbfd1fb56dde0a448fb1455453276ea18c60685bdad23a445dc148cf87bc216be1573357509b7d4060494a6fd768c7efad833ee45
   languageName: node
   linkType: hard
+
+"pickasam-web@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "pickasam-web@workspace:."
+  dependencies:
+    "@angular-devkit/build-angular": ^15.1.5
+    "@angular-eslint/builder": 15.2.0
+    "@angular-eslint/eslint-plugin": 15.2.0
+    "@angular-eslint/eslint-plugin-template": 15.2.0
+    "@angular-eslint/schematics": 15.1.0
+    "@angular-eslint/template-parser": 15.2.0
+    "@angular/animations": ^15.1.4
+    "@angular/cli": ~15.1.5
+    "@angular/common": ^15.1.4
+    "@angular/compiler": ^15.1.4
+    "@angular/compiler-cli": ^15.1.4
+    "@angular/core": ^15.1.4
+    "@angular/forms": ^15.1.4
+    "@angular/localize": ^15.1.4
+    "@angular/platform-browser": ^15.1.4
+    "@angular/platform-browser-dynamic": ^15.1.4
+    "@angular/router": ^15.1.4
+    "@ng-bootstrap/ng-bootstrap": 14.0.1
+    "@ngx-translate/core": ^14.0.0
+    "@ngx-translate/http-loader": ^7.0.0
+    "@popperjs/core": ^2.11.6
+    "@souyahia/prettier-config": ^1.0.0
+    "@souyahia/typescript-config": ^1.1.2
+    "@types/jasmine": ~4.0.0
+    "@typescript-eslint/eslint-plugin": 5.29.0
+    "@typescript-eslint/parser": 5.51.0
+    bootstrap: ^5.2.3
+    bootstrap-icons: ^1.10.3
+    eslint: ^8.18.0
+    eslint-config-airbnb-base: ^15.0.0
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-formatter-pretty: ^4.1.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-prettier: ^4.2.1
+    jasmine-core: ~4.3.0
+    karma: ~6.4.0
+    karma-chrome-launcher: ~3.1.0
+    karma-coverage: ~2.2.0
+    karma-jasmine: ~5.1.0
+    karma-jasmine-html-reporter: ~2.0.0
+    ngx-webstorage: ^11.1.1
+    prettier: ^2.7.1
+    rxjs: ~7.8.0
+    tslib: ^2.3.0
+    typescript: ~4.8.4
+    zone.js: ~0.11.4
+  languageName: unknown
+  linkType: soft
 
 "picocolors@npm:^1.0.0":
   version: 1.0.0

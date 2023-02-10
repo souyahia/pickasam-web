@@ -15,7 +15,7 @@ import { CoreModule } from './core/core.module';
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxWebstorageModule.forRoot({ prefix: 'my-app', separator: '-', caseSensitive: true }),
+    NgxWebstorageModule.forRoot({ prefix: 'pks', separator: '-', caseSensitive: true }),
     CoreModule,
     TranslationModule,
   ],

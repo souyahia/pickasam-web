@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "pickasam-web",
+  "description": "Webapp for my dating app picture elo ranking project",
   "version": "0.0.1",
   "packageManager": "yarn@3.2.4",
   "scripts": {
