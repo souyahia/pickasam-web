@@ -1,0 +1,12 @@
+{
+  "extends": "@souyahia/typescript-config/tsconfig.angular.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "paths": {
+      "app/*": [
+        "src/app/*"
+      ]
+    }
+  }
+}

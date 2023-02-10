@@ -1,0 +1,110 @@
+// Overrides https://github.com/twbs/bootstrap/blob/v5.1.3/scss/_variables.scss
+@import 'variables';
+
+// Options
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-hover-media-query: false;
+$enable-grid-classes: true;
+$enable-print-styles: true;
+
+// Colors
+$primary: $blue-200;
+$success: $green;
+$info: $blue-100;
+$warning: $yellow;
+$danger: $red;
+
+// Components
+$border-radius: 0.15rem;
+$border-radius-lg: 0.125rem;
+$border-radius-sm: 0.1rem;
+$dropdown-border-radius: 1.5rem;
+$dropdown-padding-y: 0;
+
+// Body
+$body-bg: #e4e5e6;
+
+// Typography
+$font-family-base: $app-font-family !default;
+$font-family-mono: $app-font-family-mono !default;
+
+$font-weight-base: $fw-regular !default;
+$font-weight-lighter: $fw-thin !default;
+$font-weight-light: $fw-light !default;
+$font-weight-normal: $fw-regular !default;
+$font-weight-bold: $fw-medium !default;
+$font-weight-bolder: $fw-bold !default;
+
+$font-size-base: $font-size-standard !default;
+$h1-font-size: 2.8rem !default;
+$h2-font-size: 2.6rem !default;
+$h3-font-size: 2.2rem !default;
+$h4-font-size: 1.8rem !default;
+$h5-font-size: 1.5rem !default;
+$h6-font-size: 1.4rem !default;
+
+// Spacing
+$spacer: 1.6rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    // 0px
+    1:
+      (
+        $spacer * 0.25,
+      ),
+    // 4px
+    2:
+      (
+        $spacer * 0.5,
+      ),
+    // 8px
+    3: $spacer,
+    // 16px
+    4:
+      (
+        $spacer * 1.5,
+      ),
+    // 24px
+    5:
+      (
+        $spacer * 2,
+      ),
+    // 32px
+    6:
+      (
+        $spacer * 3,
+      ),
+    // 48px
+    7:
+      (
+        $spacer * 4,
+      ),
+    // 64px
+    8:
+      (
+        $spacer * 8,
+      ),
+    // 128px
+    9:
+      (
+        $spacer * 12,
+      ),
+    // 192px
+    10:
+      (
+        $spacer * 16,
+      ),
+    // 256px
+    11:
+      (
+        $spacer * 25,
+      ),
+    // 400px
+  ),
+  $spacers
+);
