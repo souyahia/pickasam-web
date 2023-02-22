@@ -3,3 +3,7 @@
 @import 'typo';
 @import 'fonts';
 @import 'components';
+
+body {
+  background-image: linear-gradient(to bottom right, $gradient-pink);
+}

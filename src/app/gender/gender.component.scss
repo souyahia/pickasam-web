@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+.title {
+  width: 100%;
+  text-align: center;
+  color: $white;
+  font-size: 2rem;
+  padding-bottom: 4rem;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gender-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  &:hover {
+    background-color: #FFFFFF48;
+  }
+
+  &:active {
+    background-color: #FFFFFF88;
+  }
+
+  .gender-icon {
+    $size: 5rem;
+    $color: $white;
+
+    &.female {
+      margin-top: 1rem;
+      @include color-overlay($size, $white, '/../../content/images/genders/female.png');
+    }
+
+    &.male {
+      margin-bottom: 1rem;
+      @include color-overlay($size, $white, '/../../content/images/genders/male.png');
+    }
+
+    &.other {
+      margin-top: 0.4rem;
+      margin-bottom: 0.6rem;
+      @include color-overlay($size, $white, '/../../content/images/genders/other.png');
+    }
+  }
+
+  .gender-label {
+    padding-top: 1rem;
+    color: $white;
+  }
+}

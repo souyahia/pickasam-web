@@ -1,0 +1,39 @@
+@import 'variables';
+
+.navbar-container {
+  padding: 1.6rem 2.4rem;
+
+  @media (max-width: 360px) {
+    padding: 1.4rem 1.8rem;
+  }
+
+  .info-btn {
+    background: none;
+    padding: 1rem;
+
+    .label {
+      font-size: 1.8rem;
+      font-weight: $fw-bold;
+      color: $white;
+      filter: $text-on-color-dropshadow;
+
+      @media (max-width: 360px) {
+        font-size: 1.6rem;
+      }
+    }
+
+    &:hover {
+      .label {
+        color: $surface;
+        filter: none;
+      }
+    }
+
+    &:active {
+      .label {
+        color: $surface-active;
+        filter: none;
+      }
+    }
+  }
+}

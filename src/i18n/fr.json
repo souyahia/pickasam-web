@@ -1,1 +1,27 @@
-{}
+{
+  "navbar": {
+    "info": "Pick a Sam, c'est quoi ?",
+    "info-modal": {
+      "title": "Pick a Sam, c'est quoi ?",
+      "explanation": "Aide moi à choisir les meilleures photos pour les app de rencontre ! Ce site te permet de voter pour tes photos préférées. Tout le monde peut voter les photos les mieux notées seront choisies 🔥",
+      "results-subtitle": "Comment est-ce que je peux voir les résultats ?",
+      "results-text": "J'ajouterai peut-être une page pour voir les résultats sur ce site un de ces 4, mais pour l'instant il n'y a que moi qui peut les voir 😎 Ou alors essaie de me trouver sur Tinder pour voir quelles photos j'ai choisies 😂",
+      "github-subtitle": "Comment ça marche ?",
+      "github-text": "Trop la flemme de tout expliquer dans cette petite pop-up mais tu peux regarder par toi-même en allant checker le code source 🤓 :",
+      "github-web": "Site web",
+      "github-api": "API",
+      "confirm": "Je vais voter"
+    }
+  },
+  "match": {
+    "title": "Choisis ta photo préférée 💕",
+    "error": "Oups ! Une erreur est survenue, rafraîchis la page pour afficher les photos 🙏",
+    "refresh": "Rafraîchir la page"
+  },
+  "gender": {
+    "title": "Sélectionne ton genre  👀",
+    "male": "Homme",
+    "female": "Femme",
+    "other": "Autre"
+  }
+}

@@ -1,0 +1,12 @@
+@import 'variables';
+
+.modal-content {
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  background-image: linear-gradient(to bottom left, $gradient-modal);
+  color: $white;
+}
+
+.modal-backdrop.show {
+  opacity: 0.8;
+}

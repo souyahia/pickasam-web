@@ -1,1 +1,27 @@
-{}
+{
+  "navbar": {
+    "info": "What's Pick a Sam?",
+    "info-modal": {
+      "title": "What's Pick a Sam?",
+      "explanation": "Help me choose the best profile pictures for my dating apps ! This app allows you to vote for your favorite pictures. Everybody can vote and the highest rated pictures will be chosen 🔥",
+      "results-subtitle": "How can I see the results ?",
+      "results-text": "I might add a page to see the results live on this website at some point, but for now, only I can see the results 😎 Or you can try to find me on Tinder to see which pictures I've used 😂",
+      "github-subtitle": "How does it work ?",
+      "github-text": "Ain't no way I'm explaining everything in this pop-up but you can check on your own by taking a look at the source code 🤓 :",
+      "github-web": "Website",
+      "github-api": "API",
+      "confirm": "Let's vote"
+    }
+  },
+  "match": {
+    "title": "Select your favorite photo 💕",
+    "error": "Oops ! An error occurred, refresh the page to show the pictures 🙏",
+    "refresh": "Refresh the page"
+  },
+  "gender": {
+    "title": "Select your gender  👀",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other"
+  }
+}

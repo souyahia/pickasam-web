@@ -1,0 +1,21 @@
+<div class="title" translate="gender.title"></div>
+<div class="button-row row g-0">
+  <div class="button-col col">
+    <button type="button" class="gender-btn btn" (click)="selectGender(GenderRef.FEMALE)">
+      <span class="gender-icon female"></span>
+      <span class="gender-label" translate="gender.female"></span>
+    </button>
+  </div>
+  <div class="button-col col">
+    <button type="button" class="gender-btn btn" (click)="selectGender(GenderRef.MALE)">
+      <span class="gender-icon male"></span>
+      <span class="gender-label" translate="gender.male"></span>
+    </button>
+  </div>
+  <div class="button-col col">
+    <button type="button" class="gender-btn btn" (click)="selectGender(GenderRef.OTHER)">
+      <span class="gender-icon other"></span>
+      <span class="gender-label" translate="gender.other"></span>
+    </button>
+  </div>
+</div>

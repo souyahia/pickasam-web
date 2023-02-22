@@ -1,4 +1,20 @@
-.container {
-  margin: 0;
-  padding: 0;
+@import 'variables';
+
+.app-container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom right, $gradient-pink);
+
+  .bootstrap-container {
+    max-width: none;
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2rem;
+  }
 }

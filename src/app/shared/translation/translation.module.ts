@@ -12,6 +12,9 @@ import {
   translatePartialLoader,
 } from 'app/core/config/translation.config';
 
+const DEFAULT_LANG = 'fr';
+const ACCEPTED_LANGUAGES = ['fr', 'en'];
+
 @NgModule({
   imports: [
     TranslateModule.forRoot({
@@ -32,8 +35,20 @@ export class TranslationModule {
     private translateService: TranslateService,
     sessionStorageService: SessionStorageService,
   ) {
-    translateService.setDefaultLang('en');
-    const langKey = sessionStorageService.retrieve('locale') ?? 'en';
-    translateService.use(langKey);
+    translateService.setDefaultLang(DEFAULT_LANG);
+    const lang =
+      this.getNavigatorLanguage() ?? sessionStorageService.retrieve('locale') ?? DEFAULT_LANG;
+    translateService.use(lang);
+  }
+
+  getNavigatorLanguage(): string | null {
+    let lang = navigator.language;
+    if (!lang) {
+      return null;
+    }
+    if (lang.includes('-')) {
+      lang = lang.split('-')[0];
+    }
+    return ACCEPTED_LANGUAGES.includes(lang) ? lang : null;
   }
 }

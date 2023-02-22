@@ -1,12 +1,38 @@
 // Colors
-$blue-100: #17a2b8;
-$blue-200: #3e8acc;
-$green: #28a745;
-$yellow: #ffc107;
-$red: #dc3545;
+$pink: #F6386B;
+$pink-hovered: #F64071;
+$pink-active: #F74C7A;
 
-$gray-100: #f8f9fa;
-$gray-700: #495057;
+$green: #AFFEAD;
+
+$white: #FFFFFF;
+$light-100: #EFEFEF;
+$light-200: #E9E9E9;
+
+$surface: #322846;
+$surface-hovered: #3A304D;
+$surface-active: #463E59;
+
+$background: #201937;
+$background-hover: #29223F;
+$background-active: #37304B;
+
+/**
+  Note :
+    - Hovered : 4%
+    - Dragged : 8%
+    - Pressed : 10%
+    - Focused : 12%
+ */
+
+// Gradients
+$gradient-pink: #DF6A7D, #C941A2 33%, #FE3761 66%, #781D2C;
+$gradient-pink-light: #FFFFFF, #F79FDD 33%, #FFD8E0 66%, #F27D90;
+$gradient-purple: #DCDCDC, #9A8DDB 50%, #9C6FF5;
+$gradient-modal: #F1AB98, #BC65F6;
+
+// Filters
+$text-on-color-dropshadow: drop-shadow(0px 0px 2px #00000099);
 
 // Font Families
 $app-font-family: 'Roboto';

@@ -1,0 +1,134 @@
+@import 'variables';
+
+.match-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  padding: 4rem 2rem;
+  background-color: #FFFFFF40;
+  box-shadow: #00000057 0 0 15px;
+  position: relative;
+
+  @media (max-width: 600px) {
+    padding: 2rem 1rem;
+  }
+
+  &.error {
+    .title {
+      visibility: hidden;
+    }
+  }
+
+  &.error, &.loading {
+    .photo-row {
+      .photo-container {
+        background: none;
+      }
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    filter: $text-on-color-dropshadow;
+
+    @media (max-width: 600px) {
+      font-size: 1.6rem;
+    }
+
+    &.invisible {
+      visibility: hidden;
+    }
+  }
+
+  .photo-row {
+    margin-top: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+
+    .photo-container {
+      background-color: #FFFFFF73;
+      border-radius: 10px;
+      margin: 2rem;
+      padding: 1rem;
+      cursor: pointer;
+      height: 30rem;
+      width: 30rem;
+
+      @media (max-width: 600px) {
+        margin: 1rem;
+        padding: 0.5rem;
+      }
+
+      @media (max-width: 800px) {
+        height: 25rem;
+        width: 25rem;
+      }
+
+      &:hover {
+        background-color: #FFFFFF99;
+      }
+
+      &:active {
+        background-color: #FFFFFFA6;
+      }
+
+      .photo {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  .message-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .spinner {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .error-message {
+      font-size: 1.8rem;
+      color: $white;
+      padding: 0 4rem 4rem 4rem;
+      text-align: center;
+      filter: $text-on-color-dropshadow;
+    }
+
+    .refresh-btn {
+      border-radius: 9999px;
+      background-color: #9C425A;
+      padding: 0.8rem 2rem;
+      font-size: 1.8rem;
+      color: $white;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+
+      &:active {
+        filter: brightness(1.2);
+      }
+    }
+  }
+}

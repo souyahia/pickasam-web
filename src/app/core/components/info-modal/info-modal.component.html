@@ -1,0 +1,37 @@
+<div class="modal-container">
+  <button type="button" class="close-btn btn" (click)="dismissModal()">
+    <span class="close-icon"></span>
+  </button>
+  <span class="modal-title" translate="navbar.info-modal.title"></span>
+  <span class="modal-text" translate="navbar.info-modal.explanation"></span>
+  <span class="modal-subtitle" translate="navbar.info-modal.results-subtitle"></span>
+  <span class="modal-text" translate="navbar.info-modal.results-text"></span>
+  <span class="modal-subtitle" translate="navbar.info-modal.github-subtitle"></span>
+  <span class="modal-text" translate="navbar.info-modal.github-text"></span>
+  <div class="button-row">
+    <a
+      class="github-link"
+      href="https://github.com/souyahia/pickasam-web"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="github-icon"></span>
+      <span class="github-label" translate="navbar.info-modal.github-web"></span>
+    </a>
+    <a
+      class="github-link"
+      href="https://github.com/souyahia/pickasam-api"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="github-icon"></span>
+      <span class="github-label" translate="navbar.info-modal.github-api"></span>
+    </a>
+  </div>
+  <button
+    class="confirm-btn btn"
+    type="button"
+    translate="navbar.info-modal.confirm"
+    (click)="closeModal()"
+  ></button>
+</div>

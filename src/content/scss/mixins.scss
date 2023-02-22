@@ -1,0 +1,10 @@
+@mixin color-overlay($size, $color, $url) {
+  width: $size;
+  height: $size;
+  display: inline-block;
+  background: $color;
+  mask-position: center center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-image: url($url);
+}
