@@ -3,9 +3,7 @@ import { Injectable, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GenderService } from 'app/gender/gender.service';
 import { Gender, Match, Picture, Winner } from 'app/models';
-import { BehaviorSubject, delay, Observable, of } from 'rxjs';
-
-const DELAY = 400;
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 interface UpdateMatchResultRequestBody {
   winner: Winner;
@@ -44,9 +42,7 @@ export class MatchService {
       gender: this.gender,
     };
 
-    const result = this.http
-      .patch(`${this.SERVER_URL}/match/${this.match.uuid}`, payload)
-      .pipe(delay(DELAY));
+    const result = this.http.patch(`${this.SERVER_URL}/match/${this.match.uuid}`, payload);
     this.createMatch();
     return result;
   }
@@ -71,13 +67,10 @@ export class MatchService {
     this.loading$.next(true);
     this.error$.next(false);
 
-    this.http
-      .post<Match>(`${this.SERVER_URL}/match`, { gender: this.gender })
-      .pipe(delay(DELAY))
-      .subscribe({
-        next: (match) => this.onNewMatch(match),
-        error: (err) => this.onMatchFetchError(err),
-      });
+    this.http.post<Match>(`${this.SERVER_URL}/match`, { gender: this.gender }).subscribe({
+      next: (match) => this.onNewMatch(match),
+      error: (err) => this.onMatchFetchError(err),
+    });
   }
 
   private onNewMatch(match: Match): void {
