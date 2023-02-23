@@ -31,7 +31,7 @@ export class MatchService {
     private http: HttpClient,
     private sanitizer: DomSanitizer,
   ) {
-    this.getNewMatch();
+    this.createMatch();
     this.genderService.getGender().subscribe((gender) => this.onNewGender(gender));
   }
 
@@ -47,7 +47,7 @@ export class MatchService {
     const result = this.http
       .patch(`${this.SERVER_URL}/match/${this.match.uuid}`, payload)
       .pipe(delay(DELAY));
-    this.getNewMatch();
+    this.createMatch();
     return result;
   }
 
@@ -67,12 +67,12 @@ export class MatchService {
     return this.error$.asObservable();
   }
 
-  private getNewMatch(): void {
+  private createMatch(): void {
     this.loading$.next(true);
     this.error$.next(false);
 
     this.http
-      .get<Match>(`${this.SERVER_URL}/match`)
+      .post<Match>(`${this.SERVER_URL}/match`, { gender: this.gender })
       .pipe(delay(DELAY))
       .subscribe({
         next: (match) => this.onNewMatch(match),
