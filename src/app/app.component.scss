@@ -1,8 +1,8 @@
 @import 'variables';
 
 .app-container {
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(to bottom right, $gradient-pink);

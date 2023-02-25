@@ -14,7 +14,7 @@ interface UpdateMatchResultRequestBody {
   providedIn: 'root',
 })
 export class MatchService {
-  private readonly SERVER_URL = 'http://localhost:3000';
+  private readonly SERVER_URL = 'https://api.pickasam.com:3000';
 
   private gender = Gender.UNKNOWN;
   private match: Match | null = null;
@@ -90,6 +90,7 @@ export class MatchService {
 
   private onMatchFetchError(err: unknown): void {
     console.error(err);
+    console.error(JSON.stringify(err, null, 2));
     this.match = null;
     this.loading$.next(false);
     this.error$.next(true);
