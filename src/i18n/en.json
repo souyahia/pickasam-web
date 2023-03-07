@@ -11,6 +11,9 @@
       "github-web": "Website",
       "github-api": "API",
       "confirm": "Let's vote"
+    },
+    "titles": {
+      "rankings": "Rankings"
     }
   },
   "match": {
@@ -23,5 +26,20 @@
     "male": "Male",
     "female": "Female",
     "other": "Other"
+  },
+  "rankings": {
+    "error": "Oops ! An error occurred, refresh the page to show the rankings 🙏",
+    "refresh": "Refresh the page",
+    "title": "Pictures Ranking",
+    "gender": {
+      "label": "Filter by gender",
+      "all": "All",
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "elo": "Score : ",
+    "wins": "Wins : ",
+    "losses": "Losses : "
   }
 }

@@ -1,5 +1,5 @@
 <div
-  class="match-card"
+  class="light-card"
   [class.error]="isError"
   [class.loading]="isLoading"
 >
@@ -25,7 +25,7 @@
   <div *ngIf="isLoading && !isError && !isInSelectAnimation" class="message-container">
     <img class="spinner" alt="Loading" src="content/images/spinner.svg" />
   </div>
-  <div *ngIf="isError" class="message-container">
+  <div *ngIf="isError" class="resource-misc">
     <div class="error-message" translate="match.error"></div>
     <a
       type="button"

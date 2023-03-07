@@ -1,6 +1,39 @@
 <div class="navbar-container w-100 d-flex align-items-center justify-content-between">
-  <button type="button" class="btn info-btn" (click)="openInfoModal()">
+  <a *ngIf="!isHomePage()" routerLink="/" class="btn navbar-link">
+    <span class="icon back"></span>
+  </a>
+  <button
+    *ngIf="isHomePage()"
+    type="button"
+    class="btn info-btn"
+    (click)="openInfoModal()"
+  >
     <span class="label" translate="navbar.info"></span>
   </button>
+  <a *ngIf="isHomePage()" routerLink="/rankings" class="btn navbar-link">
+    <span class="icon rankings"></span>
+  </a>
+  <span
+    *ngIf="!isHomePage()"
+    class="page-title"
+    [translate]="getPageTitle()"
+  ></span>
   <pks-language-switch></pks-language-switch>
 </div>
+
+<!--<div class="navbar-container w-100 row g-0">-->
+<!--  <div class="col-5 d-flex align-items-center">-->
+<!--    <button type="button" class="btn info-btn" (click)="openInfoModal()">-->
+<!--      <span class="label" translate="navbar.info"></span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div class="col-2 d-flex align-items-center justify-content-center">-->
+<!--    <a routerLink="rankings" class="btn navbar-link">-->
+<!--      <span class="icon rankings"></span>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="col-5 d-flex align-items-center justify-content-end">-->
+<!--    <pks-language-switch></pks-language-switch>-->
+<!--  </div>-->
+<!--</div>-->
+

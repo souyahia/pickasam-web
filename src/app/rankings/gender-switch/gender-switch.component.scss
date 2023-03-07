@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+.gender-label {
+  padding-left: 1rem;
+  font-size: 1.6rem;
+  color: $white;
+
+  &.dark {
+    color: $background;
+  }
+}
+
+.dropdown-toggle::after {
+  margin-top: 0.4rem;
+  margin-left: 1rem;
+  color: $white;
+}
+
+.dropdown-btn {
+  border: solid transparent 2px;
+  border-radius: 0.6rem;
+
+  &:hover {
+    background-color: #FFFFFF22;
+  }
+}
+
+.dropdown-menu {
+  box-shadow: #00000047 0 0 10px 0;
+}
+
+.language-item {
+  padding: 1rem 2rem;
+  background-color: #FED7FF;
+  color: $surface;
+
+  .name {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+  }
+
+  &.active {
+    color: $pink;
+
+    .name {
+      font-weight: $fw-medium;
+    }
+  }
+
+  &:hover {
+    background-color: #FFE8FF;
+  }
+
+  &:active {
+    background-color: #FFF4FF;
+  }
+}

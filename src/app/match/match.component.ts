@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { OnDestroyComponent } from 'app/core/components/on-destroy.component';
+import { ResourceLoaderComponent } from 'app/core/components/resource-loader.component';
 import { GenderComponent } from 'app/gender/gender.component';
 import { GenderService } from 'app/gender/gender.service';
 import {
@@ -20,11 +21,9 @@ import { takeUntil } from 'rxjs';
   styleUrls: ['./match.component.scss'],
   animations: [popOutAnimation, selectAnimation],
 })
-export class MatchComponent extends OnDestroyComponent implements OnInit {
+export class MatchComponent extends ResourceLoaderComponent implements OnInit {
   public picture1CssUrl = '';
   public picture2CssUrl = '';
-  public isLoading = true;
-  public isError = false;
   public isInSelectAnimation = false;
 
   private selectedPicture: string | null = null;
@@ -34,22 +33,15 @@ export class MatchComponent extends OnDestroyComponent implements OnInit {
     private genderService: GenderService,
     private modalService: NgbModal,
   ) {
-    super();
+    super(matchService);
   }
 
-  ngOnInit() {
+  override ngOnInit() {
+    super.ngOnInit();
     this.genderService
       .getGender()
       .pipe(takeUntil(this.destroy$))
       .subscribe((gender) => this.onNewGender(gender));
-    this.matchService
-      .isLoading()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((isLoading) => this.updateLoading(isLoading));
-    this.matchService
-      .isError()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((isError) => this.updateError(isError));
     this.matchService
       .getPicture1Url()
       .pipe(takeUntil(this.destroy$))
@@ -102,13 +94,5 @@ export class MatchComponent extends OnDestroyComponent implements OnInit {
   private onNewPicture2Url(url: string | null): void {
     this.picture2CssUrl = url ?? '';
     this.selectedPicture = null;
-  }
-
-  private updateLoading(isLoading: boolean): void {
-    this.isLoading = isLoading;
-  }
-
-  private updateError(isError: boolean): void {
-    this.isError = isError;
   }
 }

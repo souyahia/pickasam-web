@@ -10,3 +10,49 @@
 .modal-backdrop.show {
   opacity: 0.8;
 }
+
+.light-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  padding: 4rem 2rem;
+  background-color: #FFFFFF40;
+  box-shadow: #00000057 0 0 15px;
+}
+
+.resource-misc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .spinner {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .error-message {
+    font-size: 1.8rem;
+    color: $white;
+    padding: 0 4rem 4rem 4rem;
+    text-align: center;
+    filter: $text-on-color-dropshadow;
+  }
+
+  .refresh-btn {
+    border-radius: 9999px;
+    background-color: #9C425A;
+    padding: 0.8rem 2rem;
+    font-size: 1.8rem;
+    color: $white;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      filter: brightness(1.2);
+    }
+  }
+}

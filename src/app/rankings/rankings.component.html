@@ -1,0 +1,52 @@
+<div *ngIf="!isError && !isLoading" class="picture-list">
+  <div class="picture-card top-bar light-card">
+    <div class="title" translate="rankings.gender.label"></div>
+    <pks-gender-switch
+      [selectedGender]="selectedGender"
+      (selected)="onGenderSelected($event)"
+    />
+  </div>
+  <div *ngFor="let picture of pictures; let i = index" class="picture-card light-card">
+    <div class="rank-container">
+      <div
+        class="rank"
+        [class.gold]="i === 0"
+        [class.silver]="i === 1"
+        [class.bronze]="i === 2"
+      >
+        {{ i + 1 }}
+      </div>
+      <div class="elo">
+        <span translate="rankings.elo"></span>
+        <span>{{ getPictureScore(picture) }}</span>
+      </div>
+    </div>
+    <div class="picture-container">
+      <div class="picture" [style.background-image]="picture.url"></div>
+      <div class="score-container">
+
+        <div class="score-label wins">
+          <span translate="rankings.wins"></span>
+          <span>{{ getPictureWins(picture) }}</span>
+        </div>
+        <div class="score-label losses">
+          <span translate="rankings.losses"></span>
+          <span>{{ getPictureLosses(picture) }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isError && isLoading" class="light-card resource-misc">
+  <img class="spinner" alt="Loading" src="content/images/spinner.svg" />
+</div>
+<div *ngIf="isError" class="light-card resource-misc">
+  <div class="error-message" translate="match.error"></div>
+  <a
+    type="button"
+    class="refresh-btn btn"
+    translate="rankings.refresh"
+    href="/rankings"
+  >
+  </a>
+</div>

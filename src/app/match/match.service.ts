@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, SecurityContext } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Injectable } from '@angular/core';
+import { AppConfigService } from 'app/core/config/app-config.service';
+import { PictureDataService } from 'app/core/services/picture-data.service';
+import { ResourceLoaderService } from 'app/core/services/resource-loader.service';
 import { GenderService } from 'app/gender/gender.service';
 import { Gender, Match, Picture, Winner } from 'app/models';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -13,23 +15,23 @@ interface UpdateMatchResultRequestBody {
 @Injectable({
   providedIn: 'root',
 })
-export class MatchService {
-  // private readonly SERVER_URL = 'http://localhost:3000';
-  private readonly SERVER_URL = 'https://api.pickasam.com:3000';
-
+export class MatchService extends ResourceLoaderService {
+  private readonly apiUrl: string;
+  private readonly unsafeStash: number;
   private gender = Gender.UNKNOWN;
   private match: Match | null = null;
-  private pictureUnsafeUrls: string[] = [];
   private picture1Url$ = new BehaviorSubject<string | null>(null);
   private picture2Url$ = new BehaviorSubject<string | null>(null);
-  private loading$ = new BehaviorSubject<boolean>(true);
-  private error$ = new BehaviorSubject<boolean>(false);
 
   constructor(
+    private appConfigService: AppConfigService,
     private genderService: GenderService,
+    private pictureDataService: PictureDataService,
     private http: HttpClient,
-    private sanitizer: DomSanitizer,
   ) {
+    super();
+    this.apiUrl = this.appConfigService.getConfig().apiUrl;
+    this.unsafeStash = this.pictureDataService.createUnsafeStash();
     this.createMatch();
     this.genderService.getGender().subscribe((gender) => this.onNewGender(gender));
   }
@@ -43,7 +45,7 @@ export class MatchService {
       gender: this.gender,
     };
 
-    const result = this.http.patch(`${this.SERVER_URL}/match/${this.match.uuid}`, payload);
+    const result = this.http.patch(`${this.apiUrl}/match/${this.match.uuid}`, payload);
     this.createMatch();
     return result;
   }
@@ -56,57 +58,34 @@ export class MatchService {
     return this.picture2Url$.asObservable();
   }
 
-  public isLoading(): Observable<boolean> {
-    return this.loading$.asObservable();
-  }
-
-  public isError(): Observable<boolean> {
-    return this.error$.asObservable();
-  }
-
   private createMatch(): void {
-    this.loading$.next(true);
-    this.error$.next(false);
-
-    this.http.post<Match>(`${this.SERVER_URL}/match`, { gender: this.gender }).subscribe({
+    this.startFetchingResource();
+    this.http.post<Match>(`${this.apiUrl}/match`, { gender: this.gender }).subscribe({
       next: (match) => this.onNewMatch(match),
       error: (err) => this.onMatchFetchError(err),
     });
   }
 
   private onNewMatch(match: Match): void {
-    this.loading$.next(false);
+    this.onFetchSuccess();
     this.match = match;
-    this.revokeUnsafeUrls();
+    this.pictureDataService.flush(this.unsafeStash);
     this.picture1Url$.next(this.createSafeUrl(match.picture1));
     this.picture2Url$.next(this.createSafeUrl(match.picture2));
   }
 
   private createSafeUrl(picture: Picture): string | null {
-    const blob = new Blob([Buffer.from(picture.data.data)], { type: 'image/jpeg' });
-    const unsafeUrl = URL.createObjectURL(blob);
-    this.pictureUnsafeUrls.push(unsafeUrl);
-    return this.sanitizer.sanitize(SecurityContext.STYLE, `url(${unsafeUrl})`);
+    return this.pictureDataService.createSafeUrl(this.unsafeStash, picture);
   }
 
   private onMatchFetchError(err: unknown): void {
-    console.error(err);
-    console.error(JSON.stringify(err, null, 2));
+    this.onFetchError(err);
     this.match = null;
-    this.loading$.next(false);
-    this.error$.next(true);
     this.picture1Url$.next(null);
     this.picture2Url$.next(null);
   }
 
   private onNewGender(gender: Gender): void {
     this.gender = gender;
-  }
-
-  private revokeUnsafeUrls(): void {
-    this.pictureUnsafeUrls.forEach((unsafeUrl) => {
-      URL.revokeObjectURL(unsafeUrl);
-    });
-    this.pictureUnsafeUrls = [];
   }
 }

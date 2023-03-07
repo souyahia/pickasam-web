@@ -16,5 +16,9 @@
     align-items: center;
     margin: 0;
     padding: 2rem;
+
+    @media (max-width: 600px) {
+      padding-top: 0;
+    }
   }
 }

@@ -11,6 +11,9 @@
       "github-web": "Site web",
       "github-api": "API",
       "confirm": "Je vais voter"
+    },
+    "titles": {
+      "rankings": "Classements"
     }
   },
   "match": {
@@ -23,5 +26,20 @@
     "male": "Homme",
     "female": "Femme",
     "other": "Autre"
+  },
+  "rankings": {
+    "error": "Oups ! Une erreur est survenue, rafraîchis la page pour afficher les classements 🙏",
+    "refresh": "Rafraîchir la page",
+    "title": "Classement des photos",
+    "gender": {
+      "label": "Filtrer par genre",
+      "all": "Tous",
+      "male": "Homme",
+      "female": "Femme",
+      "other": "Autre"
+    },
+    "elo": "Score : ",
+    "wins": "Victoires : ",
+    "losses": "Défaites : "
   }
 }

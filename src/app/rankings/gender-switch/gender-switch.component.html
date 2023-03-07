@@ -1,0 +1,22 @@
+<div ngbDropdown display="dynamic">
+  <button
+    type="button"
+    class="dropdown-btn btn d-flex align-items-center"
+    id="languageDropdown"
+    ngbDropdownToggle
+  >
+    <span class="gender-label" [translate]="getLabel(selectedGender)"></span>
+  </button>
+  <div ngbDropdownMenu class="dropdown-menu-dark" aria-labelledby="languageDropdown">
+    <button
+      *ngFor="let gender of availableGenders"
+      ngbDropdownItem
+      type="button"
+      class="language-item d-flex align-items-center"
+      [class.active]="isGenderSelected(gender)"
+      (click)="selectGender(gender)"
+    >
+      <span class="gender-label dark" [translate]="getLabel(gender)"></span>
+    </button>
+  </div>
+</div>
